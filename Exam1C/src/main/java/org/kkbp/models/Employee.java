@@ -8,7 +8,6 @@ public class Employee {
     private double base_salary;
     static int INCENTIVE = 300;
 
-
     public Employee(){
 
     }
