@@ -4,21 +4,20 @@ public class Employee {
     private String id;
     private String names;
     private String lastNames;
-    private int age;
+    private int edad;
     private double base_salary;
     static int INCENTIVE = 300;
-
 
     public Employee(){
 
     }
 
-    public Employee(String id, String names, String lastNames, int age, double base_salary) {
+    public Employee(String id, String names, String lastNames, int edad, double base_salary) {
 
         this.id = id;
         this.names = names;
         this.lastNames = lastNames;
-        this.age = age;
+        this.edad = edad;
         this.base_salary = base_salary;
     }
 
@@ -46,12 +45,12 @@ public class Employee {
         this.lastNames = lastNames;
     }
 
-    public int getAge() {
-        return age;
+    public int getEdad() {
+        return edad;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setEdad(int edad) {
+        this.edad = edad;
     }
 
     public double getBase_salary() {
