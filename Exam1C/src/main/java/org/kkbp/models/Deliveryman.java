@@ -17,7 +17,7 @@ public class Deliveryman extends Employee {
     }
 
     public boolean completeIncentive() {
-        if (this.getEdad() < 25 && zone.equals("Ciudad Sandino")) {
+        if (this.getAge() < 25 && zone.equals("Ciudad Sandino")) {
             System.out.println("The deliveryman will get full incentive.");
             return true;
         }
