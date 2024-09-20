@@ -1,10 +1,12 @@
 package org.kkbp.models;
 
+import org.kkbp.interfaces.Interface;
+
+import java.util.ArrayList;
 import java.util.Objects;
 
-public class Oficinist extends Employee {
+public class Oficinist extends Employee implements Interface {
     private String charge;
-
     public Oficinist(String id, String names, String lastNames, int edad, double base_salary, String charge) {
         super(id, names, lastNames, edad, base_salary);
         this.charge = charge;
@@ -30,5 +32,15 @@ public class Oficinist extends Employee {
 
     public void setCharge(String charge) {
         this.charge = charge;
+    }
+
+    @Override
+    public void add() {
+
+    }
+
+    @Override
+    public void print() {
+
     }
 }
