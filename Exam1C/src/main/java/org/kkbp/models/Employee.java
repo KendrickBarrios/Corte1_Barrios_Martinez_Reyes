@@ -6,6 +6,7 @@ public class Employee {
     private String lastNames;
     private int edad;
     private double base_salary;
+    static int INCENTIVE = 300;
 
     public Employee(){
 
