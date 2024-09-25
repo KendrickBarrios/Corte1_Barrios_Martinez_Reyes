@@ -1,6 +1,8 @@
 package org.kkbp;
 
+import org.kkbp.dao.CommercialDAO;
 import org.kkbp.dao.DeliverymanDAO;
+import org.kkbp.models.Commercial;
 import org.kkbp.models.Deliveryman;
 import org.kkbp.models.Employee;
 
@@ -38,5 +40,35 @@ public class Main {
         for (Employee employee : deliverymenList) {
             System.out.println(employee);
         }
+
+        //Use example of Commercial and CommerciaDAO classes
+        Commercial commercial1 = new Commercial("402", "Miguel", "Centeno", 32, 8500, 1.2);
+        Commercial commercial2 = new Commercial("333", "Hubert", "Palacios", 20, 6000, 3.4);
+        Commercial commercial3 = new Commercial("567", "Orlando", "Noguera", 28, 7000, 7.9);
+
+        CommercialDAO commercialDAO = new CommercialDAO();
+
+        commercialDAO.create(commercial1);
+        commercialDAO.create(commercial2);
+        commercialDAO.create(commercial3);
+
+        System.out.println("\nOrginal list of commercials");
+        ArrayList<Employee> commercialList = commercialDAO.read();
+        for (Employee employee : commercialList) {
+            System.out.println(employee);
+        }
+
+        Commercial modifyCommercial3 = new Commercial("567", "Anibal", "Duarte", 34, 9000, 5.9);
+        commercialDAO.update(modifyCommercial3);
+
+        commercialDAO.delete("333");
+
+        System.out.println("\nUpdated list of commercials");
+        commercialList.clear();
+        commercialList = commercialDAO.read();
+        for (Employee employee : commercialList) {
+            System.out.println(employee);
+        }
+
     }
 }
