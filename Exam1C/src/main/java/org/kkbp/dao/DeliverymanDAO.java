@@ -36,6 +36,7 @@ public class DeliverymanDAO implements Interface {
                     deliveryman.setAge(newDeliveryman.getAge());
                     deliveryman.setBase_salary(newDeliveryman.getBase_salary());
                     deliveryman.setZone(newDeliveryman.getZone());
+                    return;
                 }
             }
         } catch (Exception e) {
