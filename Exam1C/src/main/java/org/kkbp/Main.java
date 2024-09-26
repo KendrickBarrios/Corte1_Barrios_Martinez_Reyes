@@ -2,9 +2,11 @@ package org.kkbp;
 
 import org.kkbp.dao.CommercialDAO;
 import org.kkbp.dao.DeliverymanDAO;
+import org.kkbp.dao.OficinistDAO;
 import org.kkbp.models.Commercial;
 import org.kkbp.models.Deliveryman;
 import org.kkbp.models.Employee;
+import org.kkbp.models.Oficinist;
 
 import java.util.ArrayList;
 
@@ -69,6 +71,25 @@ public class Main {
         for (Employee employee : commercialList) {
             System.out.println(employee);
         }
+        //Example using Oficinist and OficinistDAO
+        Oficinist oficinist1 = new Oficinist("111","Johan Enrique","Reyes",18,
+                9000,"Manager");
+        Oficinist oficinist2 = new Oficinist("222","Pedro Jorge", "Sandoval", 45,
+                15000,"Oficinist");
+        Oficinist oficinist3 = new Oficinist("333","Jose Rodrigo", "Dinarte",24,
+                5000,"Manager");
 
+        OficinistDAO oficinistDAO = new OficinistDAO();
+        oficinistDAO.create(oficinist1);
+        oficinistDAO.create(oficinist2);
+        oficinistDAO.create(oficinist3);
+        System.out.println("\nOriginal list of oficinists: ");
+        oficinistDAO.read().forEach(System.out::println);
+
+        Oficinist modifiedOficinist1 = new Oficinist("111","Johan Enrique", "Reyes Rojas",
+                21, 9500,"Manager");
+        oficinistDAO.update(modifiedOficinist1);
+        System.out.println("\nUpdated list of oficinists");
+        oficinistDAO.read().forEach(System.out::println);
     }
 }
